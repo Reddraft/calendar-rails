@@ -1,5 +1,7 @@
 class DaysController < ApplicationController
 
+before_action :require_user, :restrict => [:index, :show]  
+
  def index
   @days = Day.all
  end
